@@ -10,9 +10,6 @@
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
 
-    @include('admin.partials.navbar')
-    @include('admin.partials.sidebar')
-
     <div class="content-wrapper">
         <section class="content-header">
             <h1>@yield('judul-halaman')</h1>
@@ -23,7 +20,6 @@
         </section>
     </div>
 
-    @include('admin.partials.footer')
 </div>
 
 <script src="{{ asset('assets/adminlte/plugins/jquery/jquery.min.js') }}"></script>
