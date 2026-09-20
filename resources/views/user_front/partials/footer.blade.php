@@ -1,3 +1,4 @@
+<!-- Footer -->
 <footer class="border-t border-gray-line">
     <!-- Top part -->
     <div class="container mx-auto px-4 py-10">
@@ -37,23 +38,23 @@
                 <h3 class="text-lg font-semibold mb-4">Follow Us</h3>
                 <ul>
                     <li class="flex items-center mb-2">
-                        <img src="{{asset('/assets/tailstore/images/social_icons/facebook.svg')}}" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                        <img src="{{ asset('user_front/assets/images/social_icons/facebook.svg') }}" alt="Facebook" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                         <a href="#" class="hover:text-primary">Facebook</a>
                     </li>
                     <li class="flex items-center mb-2">
-                        <img src="{{asset('/assets/tailstore/images/social_icons/twitter.svg')}}" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                        <img src="{{ asset('user_front/assets/images/social_icons/twitter.svg') }}" alt="Twitter" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                         <a href="#" class="hover:text-primary">Twitter</a>
                     </li>
                     <li class="flex items-center mb-2">
-                        <img src="{{asset('/assets/tailstore/images/social_icons/instagram.svg')}}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                        <img src="{{ asset('user_front/assets/images/social_icons/instagram.svg') }}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                         <a href="#" class="hover:text-primary">Instagram</a>
                     </li>
                     <li class="flex items-center mb-2">
-                        <img src="{{asset('/assets/tailstore/images/social_icons/pinterest.svg')}}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                        <img src="{{ asset('user_front/assets/images/social_icons/pinterest.svg') }}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                         <a href="#" class="hover:text-primary">Pinterest</a>
                     </li>
                     <li class="flex items-center mb-2">
-                        <img src="{{asset('/assets/tailstore/images/social_icons/youtube.svg')}}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
+                        <img src="{{ asset('user_front/assets/images/social_icons/youtube.svg') }}" alt="Instagram" class="w-4 h-4 transition-transform transform hover:scale-110 mr-2">
                         <a href="#" class="hover:text-primary">YouTube</a>
                     </li>
                 </ul>
@@ -61,8 +62,7 @@
             <!-- Contact Information -->
             <div class="w-full sm:w-2/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Contact Us</h3>
-                <p><img src="{{ asset('assets/tailstore/images/template-logo.png') }}"
- alt="Logo" class="h-[60px] mb-4"></p>
+                <p><img src="{{ asset('user_front/assets/images/template-logo.png') }}" alt="Logo" class="h-[60px] mb-4"></p>
                 <p>123 Street Name, Paris, France</p>
                 <p class="text-xl font-bold my-4">Phone: (123) 456-7890</p>
                 <a href="mailto:info@company.com" class="underline">Email: info@company.com</a>
@@ -75,7 +75,10 @@
         <div class="container mx-auto px-4 flex flex-wrap justify-between items-center">
             <!-- Copyright and Links -->
             <div class="w-full lg:w-3/4 text-center lg:text-left mb-4 lg:mb-0">
-                <p class="mb-2 font-bold">&copy; 2024 Your Company. All rights reserved.</p>
+                <p class="mb-2 font-bold">&copy; 2024 Your Company. All rights reserved by <a
+                            href="https://github.com/spacemadev" target="_blank" style="color: green;">Maksim M</a> • Distributed by <a href="https://themewagon.com/" target="_blank"
+                                                                                                                                        style="color: green;font-weight: bold;">ThemeWagon</a></p>
+                </p>
                 <ul class="flex justify-center lg:justify-start space-x-4 mb-4 lg:mb-0">
                     <li><a href="#" class="hover:text-primary">Privacy Policy</a></li>
                     <li><a href="#" class="hover:text-primary">Terms of Service</a></li>
@@ -85,9 +88,9 @@
             </div>
             <!-- Payment Icons -->
             <div class="w-full lg:w-1/4 text-center lg:text-right">
-                <img src="{{asset('/assets/tailstore/images/social_icons/paypal.svg')}}" alt="PayPal" class="inline-block h-8 mr-2">
-                <img src="{{asset('/assets/tailstore/images/social_icons/stripe.svg')}}" alt="Stripe" class="inline-block h-8 mr-2">
-                <img src="{{asset('/assets/tailstore/images/social_icons/visa.svg')}}" alt="Visa" class="inline-block h-8">
+                <img src="{{ asset('user_front/assets/images/social_icons/paypal.svg') }}" alt="PayPal" class="inline-block h-8 mr-2">
+                <img src="{{ asset('user_front/assets/images/social_icons/stripe.svg') }}" alt="Stripe" class="inline-block h-8 mr-2">
+                <img src="{{ asset('user_front/assets/images/social_icons/visa.svg') }}" alt="Visa" class="inline-block h-8">
             </div>
         </div>
     </div>
