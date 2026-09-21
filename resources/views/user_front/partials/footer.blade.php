@@ -7,19 +7,19 @@
             <div class="w-full sm:w-1/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Shop</h3>
                 <ul>
-                    <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
-                    <li><a href="/single-product-page.html" class="hover:text-primary">Women</a></li>
-                    <li><a href="/shop.html" class="hover:text-primary">Men</a></li>
-                    <li><a href="/single-product-page.html" class="hover:text-primary">Shoes</a></li>
-                    <li><a href="/single-product-page.html" class="hover:text-primary">Accessories</a></li>
+                    <li><a href="{{ route('produk.index') }}" class="hover:text-primary">Shop</a></li>
+                    <li><a href="{{ route('produk.show', 1) }}" class="hover:text-primary">Women</a></li>
+                    <li><a href="{{ route('produk.index') }}" class="hover:text-primary">Men</a></li>
+                    <li><a href="{{ route('produk.show', 1) }}" class="hover:text-primary">Shoes</a></li>
+                    <li><a href="{{ route('produk.show', 1) }}" class="hover:text-primary">Accessories</a></li>
                 </ul>
             </div>
             <!-- Menu 2 -->
             <div class="w-full sm:w-1/6 px-4 mb-8">
                 <h3 class="text-lg font-semibold mb-4">Pages</h3>
                 <ul>
-                    <li><a href="/shop.html" class="hover:text-primary">Shop</a></li>
-                    <li><a href="/single-product-page.html" class="hover:text-primary">Product</a></li>
+                    <li><a href="{{ route('produk.index') }}" class="hover:text-primary">Shop</a></li>
+                    <li><a href="{{ route('produk.show', 1) }}" class="hover:text-primary">Product</a></li>
                     <li><a href="/checkout.html" class="hover:text-primary">Checkout</a></li>
                     <li><a href="/404.html" class="hover:text-primary">404</a></li>
                 </ul>

@@ -1,5 +1,5 @@
 @extends('user_front.layouts.app')
-@section('judul', 'Katalog Saya') {{-- Bonus: Biar tab browser tidak 'Toko Saya' melulu --}}
+@section('judul', 'Daftar Produk') {{-- Bonus: Biar tab browser tidak 'Toko Saya' melulu --}}
 
 @section('konten')
     <!-- Shop -->
@@ -139,90 +139,33 @@
                 <!-- Products List -->
                 <div class="w-full md:w-3/4 p-4">
                     <!-- Products grid -->
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                        <!-- Product 1 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/5.jpg') }}" alt="Product 1"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold mb-2">Blue women's suit</a>
-                            <p class=" my-2">Women</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-primary">$19.99</span>
-                                <span class="text-sm line-through ml-2">$24.99</span>
+                    <div class="flex flex-wrap -mx-4">
+
+                        @foreach ($daftarProduk as $produk)
+                            <div class="w-full sm:w-1/2 lg:w-1/4 px-4 mb-8">
+                                <div class="bg-white p-3 rounded-lg shadow-lg">
+                                    <img src="{{ asset('user_front/' . $produk['gambar']) }}"
+                                         alt="{{ $produk['nama'] }}"
+                                         class="w-full object-cover mb-4 rounded-lg">
+
+                                    <a href="{{ route('produk.show', $produk['id']) }}"
+                                       class="text-lg font-semibold mb-2">{{ $produk['nama'] }}</a>
+
+                                    <p class="my-2">{{ $produk['kategori'] }}</p>
+
+                                    <div class="flex items-center mb-4">
+                                        <span class="text-lg font-bold text-primary">
+                                            ${{ number_format($produk['harga'], 2) }}
+                                        </span>
+                                    </div>
+
+                                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
+                                        Add to Cart
+                                    </button>
+                                </div>
                             </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
-                        <!-- Product 2 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/6.jpg') }}" alt="Product 2"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold mb-2">White shirt with long sleeves</a>
-                            <p class=" my-2">Women</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-gray-900">$29.99</span>
-                            </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
-                        <!-- Product 3 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/7.jpg') }}" alt="Product 3"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold mb-2">Yellow men's suit</a>
-                            <p class="my-2">Men</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-gray-900">$15.99</span>
-                                <span class="text-sm line-through  ml-2">$19.99</span>
-                            </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
-                        <!-- Product 4 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/8.jpg') }}" alt="Product 4"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold mb-2">Red dress</a>
-                            <p class="my-2">Women</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-primary">$39.99</span>
-                                <span class="text-sm line-through ml-2">$49.99</span>
-                            </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
-                        <!-- Product 5 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/4.jpg') }}" alt="Product 4"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold">Black leather jacket</a>
-                            <p class="my-2">Women</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-primary">$39.99</span>
-                                <span class="text-sm line-through ml-2">$49.99</span>
-                            </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
-                        <!-- Product 6 -->
-                        <div class="bg-white p-4 rounded-lg shadow">
-                            <img src="{{ asset('user_front/assets/images/products/3.jpg') }}" alt="Product 3"
-                                 class="w-full object-cover mb-4 rounded-lg">
-                            <a href="#" class="text-lg font-semibold mb-2">Black long dress</a>
-                            <p class=" my-2">Women, Accessories</p>
-                            <div class="flex items-center mb-4">
-                                <span class="text-lg font-bold text-gray-900">$15.99</span>
-                                <span class="text-sm line-through  ml-2">$19.99</span>
-                            </div>
-                            <button
-                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">Add
-                                to Cart</button>
-                        </div>
+                        @endforeach
+
                     </div>
                     <!-- Pagination -->
                     <div class="flex justify-center mt-8">
