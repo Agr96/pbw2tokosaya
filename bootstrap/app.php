@@ -11,8 +11,14 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware): void {
-        //
+    ->withMiddleware(function (Middleware $middleware) {
+
+        $middleware->alias([
+            'admin' => \App\Http\Middleware\PastikanAdmin::class,
+        ]);
+
+        // Tamu yang mencoba masuk area terkunci diantar ke login back office
+        $middleware->redirectGuestsTo(fn () => route('back_office.login'));
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
