@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\PastikanAdmin;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -11,14 +12,14 @@ return Application::configure(basePath: dirname(__DIR__))
         commands: __DIR__.'/../routes/console.php',
         health: '/up',
     )
-    ->withMiddleware(function (Middleware $middleware) {
-
+    ->withMiddleware(function (Middleware $middleware): void {
         $middleware->alias([
-            'admin' => \App\Http\Middleware\PastikanAdmin::class,
+            'admin' => PastikanAdmin::class,
         ]);
 
-        // Tamu yang mencoba masuk area terkunci diantar ke login back office
-        $middleware->redirectGuestsTo(fn () => route('back_office.login'));
+        $middleware->redirectGuestsTo(
+            fn (Request $request) => route('back_office.login')
+        );
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(

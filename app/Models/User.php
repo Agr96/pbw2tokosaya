@@ -4,12 +4,13 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Database\Factories\UserFactory;
-use Illuminate\Database\Eloquent\Attributes\Hidden; // Tetap biarkan jika ingin pakai attribute Hidden
+use Illuminate\Database\Eloquent\Attributes\Fillable;
+use Illuminate\Database\Eloquent\Attributes\Hidden;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
-
+#[Fillable(['name', 'email', 'password', 'role'])]
 #[Hidden(['password', 'remember_token'])]
 class User extends Authenticatable
 {
@@ -17,14 +18,12 @@ class User extends Authenticatable
     use HasFactory, Notifiable;
 
     /**
-     *
+     * Check whether the user has an admin role.
      */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-        'role', // <-
-    ];
+    public function isAdmin(): bool
+    {
+        return $this->role === 'admin';
+    }
 
     /**
      * Get the attributes that should be cast.
@@ -37,13 +36,5 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
-    }
-
-    /**
-     *
-     */
-    public function isAdmin(): bool
-    {
-        return $this->role === 'admin';
     }
 }
