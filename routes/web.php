@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BackOffice\AuthController;
 use App\Http\Controllers\BackOffice\DashboardController;
+use App\Http\Controllers\BackOffice\KategoriController;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
@@ -33,5 +34,9 @@ Route::prefix('back-office')
 
             Route::post('/logout', [AuthController::class, 'logout'])
                 ->name('logout');
+
+            // CRUD Kategori
+            Route::resource('kategori', KategoriController::class)
+                ->except(['show']);
         });
     });
