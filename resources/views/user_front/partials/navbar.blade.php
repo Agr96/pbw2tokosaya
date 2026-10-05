@@ -26,7 +26,7 @@
                 <!-- Men Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
                     <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
-                        Men
+                        Primary
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
                     </a>
                     <ul
@@ -50,7 +50,7 @@
                 <!-- Women Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
                     <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
-                        Women
+                        Secondary
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
                     </a>
                     <ul
@@ -139,32 +139,32 @@
         <!-- Men Dropdown -->
         <li class="relative group" x-data="{ open: false }">
             <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold  py-2 flex justify-center items-center cursor-pointer">
-                <span>Men</span>
+                <span>Primary</span>
                 <span @click.stop="open = !open">
                     <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
                 </span>
             </a>
             <ul class="mobile-dropdown-menu" x-show="open" x-transition class="space-y-2">
-                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block pt-2 pb-3">Shop Men</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Men item 1</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Men item 2</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Men item 3</a></li>
+                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block pt-2 pb-3">Primary</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Hotel</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Rumah</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Villa</a></li>
             </ul>
         </li>
 
         <!-- Women Dropdown -->
         <li class="relative group" x-data="{ open: false }">
             <a @click="open = !open; $event.preventDefault()" class="hover:text-secondary font-bold py-2 flex justify-center items-center cursor-pointer">
-                <span>Women</span>
+                <span>Secondary</span>
                 <span @click.stop="open = !open">
                         <i :class="open ? 'fas fa-chevron-up text-xs ml-2' : 'fas fa-chevron-down text-xs ml-2'"></i>
                     </span>
             </a>
             <ul class="mobile-dropdown-menu" x-show="open" x-transition class="pl-4 space-y-2">
-                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">Shop Women</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Women item 1</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Women item 2</a></li>
-                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Women item 3</a></li>
+                <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">Secondary</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Hotel</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Rumah</a></li>
+                <li><a href="{{ route('produk.show', 1) }}" class="hover:text-secondary font-bold block py-2">Villa</a></li>
             </ul>
         </li>
 
@@ -175,9 +175,9 @@
     </ul>
     <div class="flex flex-col mt-6 space-y-2 items-center">
         <a href="register.html"
-           class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Register</a>
+           class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Hubungi Kami</a>
         <a href="register.html"
-           class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Login</a>
+           class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Cek Lokasi</a>
         <a href="register.html"
            class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">Cart -&nbsp;<span>5</span>&nbsp;items</a>
     </div>

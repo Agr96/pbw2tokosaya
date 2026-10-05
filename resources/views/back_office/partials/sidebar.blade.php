@@ -13,6 +13,14 @@
             <ul class="nav sidebar-menu flex-column" data-lte-toggle="treeview" role="menu">
 
                 <li class="nav-item">
+                    <a href="{{ route('home') }}"
+                       class="nav-link {{ request()->routeIs('home') }}">
+                        <i class="nav-icon bi bi-speedometer1"></i>
+                        <p>Cek Live Website</p>
+                    </a>
+                </li>
+
+                <li class="nav-item">
                     <a href="{{ route('back_office.dashboard') }}"
                        class="nav-link {{ request()->routeIs('back_office.dashboard') ? 'active' : '' }}">
                         <i class="nav-icon bi bi-speedometer2"></i>
