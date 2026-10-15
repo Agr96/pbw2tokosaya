@@ -50,4 +50,64 @@ return [
     'ikuti_kami'     => 'Follow Us',
     'hak_cipta'      => 'All rights reserved.',
 
+    // ==========================================
+    // KUNCI TAMBAHAN DARI UPDATE TAMPILAN BLADE
+    // ==========================================
+
+    // Tambahan Navbar
+    'kategori_utama'       => 'Primary',
+    'kategori_sekunder'    => 'Secondary',
+    'item_1'               => 'Item 1',
+    'item_2'               => 'Item 2',
+    'checkout'             => 'Checkout',
+    'kuantitas'            => 'Quantity',
+    'ke_keranjang'         => 'Go to Cart',
+    'cek_lokasi'           => 'Check Location',
+
+    // Tambahan Footer
+    'belanja'              => 'Shop',
+    'wanita'               => 'Women',
+    'pria'                 => 'Men',
+    'sepatu'               => 'Shoes',
+    'aksesoris'            => 'Accessories',
+    'halaman'              => 'Pages',
+    'akun'                 => 'Account',
+    'didistribusikan_oleh' => 'Distributed by',
+    'kebijakan_privasi'    => 'Privacy Policy',
+    'syarat_layanan'       => 'Terms of Service',
+    'faq'                  => 'FAQ',
+    'deskripsi_singkat_toko' => 'Your shop\'s description goes here. This is a brief introduction to your shop and what you offer.',
+
+    // Tambahan Halaman Produk
+    'tampil_diskon'        => 'Show On Sale',
+    'tampilan_daftar'      => 'List View',
+    'tampilan_grid'        => 'Grid View',
+    'urut_terbaru'         => 'Sort by Latest',
+    'urut_populer'         => 'Sort by Popularity',
+    'urut_az'              => 'Sort by A-Z',
+    'tampil_filter'        => 'Show Filters',
+    'selanjutnya'          => 'Next',
+    'kategori_kemeja_judul'=> 'Shirts Category',
+    'kategori_kemeja_paragraf_1' => 'Discover our wide range of shirts, perfect for any occasion. Whether you\'re looking for something casual or formal, we have the perfect shirt for you. Our collection includes a variety of styles, colors, and sizes to suit everyone\'s taste.',
+    'kategori_kemeja_paragraf_2' => 'Browse through our selection and find your new favorite shirt today. All our shirts are made from high-quality materials and are designed to provide both comfort and style. Shop now and elevate your wardrobe with our premium shirts.',
+
+    // Tambahan Detail Produk
+    'spesifikasi'          => 'Specifications',
+    'hubungi_pemilik'      => 'Contact Property Owner',
+
+    // Tambahan Kontak Ekstra
+    'hubungi'              => 'Contact',
+    'kami'                 => 'Us',
+    'alamat_toko'          => 'Store Address',
+    'hari_kerja'           => 'Monday - Friday',
+    'kirim_pesan_langsung' => 'Send Direct Message',
+    'placeholder_nama'     => 'Enter your full name',
+    'alamat_email'         => 'Email Address',
+    'placeholder_email'    => 'Enter your active email',
+    'subjek'               => 'Subject',
+    'placeholder_subjek'   => 'Product inquiry, complaint, or collaboration?',
+    'isi_pesan'            => 'Message Body',
+    'placeholder_pesan'    => 'Write your message details here...',
+    'kirim_pesan_sekarang' => 'Send Message Now',
+
 ];

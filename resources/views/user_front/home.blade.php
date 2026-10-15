@@ -1,5 +1,5 @@
 @extends('user_front.layouts.app')
-@section('judul', 'Beranda')
+@section('judul', __('web.beranda'))
 
 @section('konten')
     <!-- Slider -->
@@ -16,7 +16,7 @@
 
                 <!-- Menu 1: Mengarah ke semua produk -->
                 <a href="{{ route('produk.index') }}" class="hover:text-blue-600 transition-colors">
-                    All Product
+                    {{ __('web.semua_produk') }}
                 </a>
 
                 <!-- Pemisah / -->
@@ -24,7 +24,7 @@
 
                 <!-- Menu 2: Mengarah ke produk populer -->
                 <a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors">
-                    Popular Product
+                    {{ __('web.produk_populer') }}
                 </a>
 
             </div>
@@ -63,7 +63,7 @@
                             </div>
 
                             <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
-                                Add to Cart
+                                {{ __('web.tambah_keranjang') }}
                             </button>
 
                         </div>
@@ -91,5 +91,5 @@
 
 
     <!-- Subscribe section -->
-    <
+
 @endsection

@@ -1,5 +1,5 @@
 @extends('user_front.layouts.app')
-@section('judul', 'Daftar Produk')
+@section('judul', __('web.semua_produk'))
 
 @section('konten')
     <!-- Shop -->
@@ -10,7 +10,7 @@
 
                 <!-- Menu 1: Mengarah ke semua produk -->
                 <a href="{{ route('produk.index') }}" class="hover:text-blue-600 transition-colors">
-                    All Product
+                    {{ __('web.semua_produk') }}
                 </a>
 
                 <!-- Pemisah / -->
@@ -18,7 +18,7 @@
 
                 <!-- Menu 2: Mengarah ke produk populer -->
                 <a href="{{ route('home') }}" class="hover:text-blue-600 transition-colors">
-                    Popular Product
+                    {{ __('web.produk_populer') }}
                 </a>
 
             </div>
@@ -26,42 +26,30 @@
             <!-- Top Filter -->
             <div class="flex flex-col md:flex-row justify-between items-center py-4">
                 <div class="flex items-center space-x-4">
-                    <button
-                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
-                        Show On Sale
+                    <button class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
+                        {{ __('web.tampil_diskon') }}
                     </button>
 
-                    <button
-                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
-                        List View
+                    <button class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
+                        {{ __('web.tampilan_daftar') }}
                     </button>
 
-                    <button
-                        class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
-                        Grid View
+                    <button class="bg-primary text-white hover:bg-transparent hover:text-primary border hover:border-primary py-2 px-4 rounded-full focus:outline-none">
+                        {{ __('web.tampilan_grid') }}
                     </button>
                 </div>
 
                 <div class="flex mt-5 md:mt-0 space-x-4">
                     <div class="relative">
-                        <select
-                            class="block appearance-none w-full bg-white border hover:border-primary px-4 py-2 pr-8 rounded-full shadow leading-tight focus:outline-none focus:shadow-outline">
-                            <option>Sort by Latest</option>
-                            <option>Sort by Popularity</option>
-                            <option>Sort by A-Z</option>
+                        <select class="block appearance-none w-full bg-white border hover:border-primary px-4 py-2 pr-8 rounded-full shadow leading-tight focus:outline-none focus:shadow-outline">
+                            <option>{{ __('web.urut_terbaru') }}</option>
+                            <option>{{ __('web.urut_populer') }}</option>
+                            <option>{{ __('web.urut_az') }}</option>
                         </select>
 
-                        <div
-                            class="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center px-2">
-                            <img id="arrow-down"
-                                 class="h-4 w-4"
-                                 src="{{ asset('user_front/assets/images/filter-down-arrow.svg') }}"
-                                 alt="filter arrow">
-
-                            <img id="arrow-up"
-                                 class="h-4 w-4 hidden"
-                                 src="{{ asset('user_front/assets/images/filter-up-arrow.svg') }}"
-                                 alt="filter arrow">
+                        <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center justify-center px-2">
+                            <img id="arrow-down" class="h-4 w-4" src="{{ asset('user_front/assets/images/filter-down-arrow.svg') }}" alt="filter arrow">
+                            <img id="arrow-up" class="h-4 w-4 hidden" src="{{ asset('user_front/assets/images/filter-up-arrow.svg') }}" alt="filter arrow">
                         </div>
                     </div>
                 </div>
@@ -70,9 +58,8 @@
 
             <!-- Filter Toggle Button for Mobile -->
             <div class="block md:hidden text-center mb-4">
-                <button id="products-toggle-filters"
-                        class="bg-primary text-white py-2 px-4 rounded-full focus:outline-none">
-                    Show Filters
+                <button id="products-toggle-filters" class="bg-primary text-white py-2 px-4 rounded-full focus:outline-none">
+                    {{ __('web.tampil_filter') }}
                 </button>
             </div>
 
@@ -84,7 +71,7 @@
 
                     <!-- Category Filter -->
                     <div class="mb-6 pb-8 border-b border-gray-line">
-                        <h3 class="text-lg font-semibold mb-6">Category</h3>
+                        <h3 class="text-lg font-semibold mb-6">{{ __('web.kategori') }}</h3>
 
                         <div class="space-y-2">
                             @foreach ($daftarKategori as $kategori)
@@ -96,17 +83,7 @@
                         </div>
                     </div>
 
-
-
-
-
-
-
-
-
-
                 </div>
-
 
                 <!-- Products List -->
                 <div class="w-full md:w-3/4 p-4">
@@ -120,13 +97,10 @@
                                 <div class="bg-white p-3 rounded-lg shadow-lg">
 
                                     @if ($produk->gambar)
-                                        <img src="{{ asset('storage/' . $produk->gambar) }}"
-                                             alt="{{ $produk->nama_produk }}"
-                                             class="w-full object-cover mb-4 rounded-lg">
+                                        <img src="{{ asset('storage/' . $produk->gambar) }}" alt="{{ $produk->nama_produk }}" class="w-full object-cover mb-4 rounded-lg">
                                     @endif
 
-                                    <a href="{{ route('produk.show', $produk) }}"
-                                       class="text-lg font-semibold mb-2">
+                                    <a href="{{ route('produk.show', $produk) }}" class="text-lg font-semibold mb-2">
                                         {{ $produk->nama_produk }}
                                     </a>
 
@@ -146,9 +120,8 @@
                                         @endif
                                     </div>
 
-                                    <button
-                                        class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
-                                        Add to Cart
+                                    <button class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
+                                        {{ __('web.tambah_keranjang') }}
                                     </button>
 
                                 </div>
@@ -162,35 +135,21 @@
                     <div class="flex justify-center mt-8">
                         <nav aria-label="Page navigation">
                             <ul class="inline-flex space-x-2">
-
+                                <!-- Pagination angka biasanya dinamis lewat $daftarProduk->links(), tapi karena ini hardcode gue cuma ganti "Next" -->
                                 <li>
-                                    <a href="#"
-                                       class="bg-primary text-white w-10 h-10 flex items-center justify-center rounded-full">
-                                        1
+                                    <a href="#" class="bg-primary text-white w-10 h-10 flex items-center justify-center rounded-full">1</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">2</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">3</a>
+                                </li>
+                                <li>
+                                    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">
+                                        {{ __('web.selanjutnya') }}
                                     </a>
                                 </li>
-
-                                <li>
-                                    <a href="#"
-                                       class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">
-                                        2
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#"
-                                       class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-primary hover:text-white">
-                                        3
-                                    </a>
-                                </li>
-
-                                <li>
-                                    <a href="#"
-                                       class="w-10 h-10 flex items-center justify-center rounded-full">
-                                        Next
-                                    </a>
-                                </li>
-
                             </ul>
                         </nav>
                     </div>
@@ -200,29 +159,19 @@
         </div>
     </section>
 
-
     <!-- Shop category description -->
     <section id="shop-category-description" class="py-8">
         <div class="container mx-auto">
-
             <div class="bg-white p-6 rounded-lg shadow-lg">
-
                 <h2 class="text-2xl font-bold mb-4">
-                    Shirts Category
+                    {{ __('web.kategori_kemeja_judul') }}
                 </h2>
-
                 <p class="mb-4">
-                    Discover our wide range of shirts, perfect for any occasion. Whether you're looking for something
-                    casual or formal, we have the perfect shirt for you. Our collection includes a variety of styles,
-                    colors, and sizes to suit everyone's taste.
+                    {{ __('web.kategori_kemeja_paragraf_1') }}
                 </p>
-
                 <p>
-                    Browse through our selection and find your new favorite shirt today. All our shirts are made from
-                    high-quality materials and are designed to provide both comfort and style. Shop now and elevate your
-                    wardrobe with our premium shirts.
+                    {{ __('web.kategori_kemeja_paragraf_2') }}
                 </p>
-
             </div>
         </div>
     </section>

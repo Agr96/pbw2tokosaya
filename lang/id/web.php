@@ -50,4 +50,64 @@ return [
     'ikuti_kami'     => 'Ikuti Kami',
     'hak_cipta'      => 'Seluruh hak cipta dilindungi.',
 
+    // ==========================================
+    // KUNCI TAMBAHAN DARI UPDATE TAMPILAN BLADE
+    // ==========================================
+
+    // Tambahan Navbar
+    'kategori_utama'       => 'Utama',
+    'kategori_sekunder'    => 'Sekunder',
+    'item_1'               => 'Item 1',
+    'item_2'               => 'Item 2',
+    'checkout'             => 'Checkout',
+    'kuantitas'            => 'Kuantitas',
+    'ke_keranjang'         => 'Ke Keranjang',
+    'cek_lokasi'           => 'Cek Lokasi',
+
+    // Tambahan Footer
+    'belanja'              => 'Belanja',
+    'wanita'               => 'Wanita',
+    'pria'                 => 'Pria',
+    'sepatu'               => 'Sepatu',
+    'aksesoris'            => 'Aksesoris',
+    'halaman'              => 'Halaman',
+    'akun'                 => 'Akun',
+    'didistribusikan_oleh' => 'Didistribusikan oleh',
+    'kebijakan_privasi'    => 'Kebijakan Privasi',
+    'syarat_layanan'       => 'Syarat Layanan',
+    'faq'                  => 'FAQ',
+    'deskripsi_singkat_toko' => 'Deskripsi toko Anda di sini. Ini adalah pengantar singkat tentang toko Anda dan apa yang Anda tawarkan.',
+
+    // Tambahan Halaman Produk
+    'tampil_diskon'        => 'Tampilkan Diskon',
+    'tampilan_daftar'      => 'Tampilan Daftar',
+    'tampilan_grid'        => 'Tampilan Grid',
+    'urut_terbaru'         => 'Urutkan Terbaru',
+    'urut_populer'         => 'Urutkan Terpopuler',
+    'urut_az'              => 'Urutkan A-Z',
+    'tampil_filter'        => 'Tampilkan Filter',
+    'selanjutnya'          => 'Selanjutnya',
+    'kategori_kemeja_judul'=> 'Kategori Kemeja',
+    'kategori_kemeja_paragraf_1' => 'Temukan berbagai macam kemeja kami, sempurna untuk setiap kesempatan. Baik Anda mencari yang kasual atau formal, kami memiliki kemeja yang tepat untuk Anda. Koleksi kami mencakup berbagai gaya, warna, dan ukuran yang sesuai dengan selera semua orang.',
+    'kategori_kemeja_paragraf_2' => 'Jelajahi pilihan kami dan temukan kemeja favorit baru Anda hari ini. Semua kemeja kami terbuat dari bahan berkualitas tinggi dan dirancang untuk memberikan kenyamanan dan gaya. Belanja sekarang dan tingkatkan isi lemari Anda dengan kemeja premium kami.',
+
+    // Tambahan Detail Produk
+    'spesifikasi'          => 'Spesifikasi',
+    'hubungi_pemilik'      => 'Hubungi Pemilik Properti',
+
+    // Tambahan Kontak Ekstra
+    'hubungi'              => 'Hubungi',
+    'kami'                 => 'Kami',
+    'alamat_toko'          => 'Alamat Toko',
+    'hari_kerja'           => 'Senin - Jumat',
+    'kirim_pesan_langsung' => 'Kirim Pesan Langsung',
+    'placeholder_nama'     => 'Masukkan nama lengkap Anda',
+    'alamat_email'         => 'Alamat Email',
+    'placeholder_email'    => 'Masukkan email aktif',
+    'subjek'               => 'Subjek',
+    'placeholder_subjek'   => 'Tanya produk, komplain, atau kerja sama?',
+    'isi_pesan'            => 'Isi Pesan',
+    'placeholder_pesan'    => 'Tulis detail pesan Anda di sini...',
+    'kirim_pesan_sekarang' => 'Kirim Pesan Sekarang',
+
 ];

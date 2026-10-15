@@ -6,14 +6,14 @@
     <div class="container mx-auto px-4 mt-6">
         <a href="{{ route('home') }}"
            class="text-gray-500 hover:text-primary transition">
-            Home
+            {{ __('web.beranda') }}
         </a>
 
         <span class="mx-2 text-gray-400">&gt;</span>
 
         <a href="{{ route('produk.index') }}"
            class="text-gray-500 hover:text-primary transition">
-            Produk
+            {{ __('web.produk') }}
         </a>
 
         <span class="mx-2 text-gray-400">&gt;</span>
@@ -53,7 +53,7 @@
 
 
                         <p class="mb-4 text-gray-500">
-                            Kategori:
+                            {{ __('web.kategori') }}:
                             <span class="font-bold text-primary">
                                 {{ $produk->kategori->nama_kategori }}
                             </span>
@@ -77,7 +77,7 @@
 
                         <!-- Product Description -->
                         <h3 class="text-xl font-bold mb-4 text-black">
-                            Spesifikasi
+                            {{ __('web.spesifikasi') }}
                         </h3>
 
                         <div class="text-gray-500 leading-relaxed mb-8">
@@ -89,7 +89,7 @@
                         <button
                             class="bg-primary hover:bg-opacity-90 text-white font-bold py-3 px-8 rounded-full transition duration-300 w-full sm:w-auto shadow-md">
                             <i class="fa-solid fa-cart-shopping mr-2"></i>
-                            Hubungi Pemilik Properti
+                            {{ __('web.hubungi_pemilik') }}
                         </button>
 
                     </div>
