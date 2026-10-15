@@ -7,6 +7,10 @@ use App\Http\Controllers\BackOffice\ProdukController as ProdukBackOffice;
 use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BahasaController;
+
+// Route untuk mengubah bahasa
+Route::get('/bahasa/{kode}', [BahasaController::class, 'ganti'])->name('bahasa.ganti');
 
 Route::get('/', [HalamanController::class, 'home'])
     ->name('home');

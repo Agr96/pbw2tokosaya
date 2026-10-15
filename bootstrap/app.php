@@ -17,9 +17,16 @@ return Application::configure(basePath: dirname(__DIR__))
             'admin' => PastikanAdmin::class,
         ]);
 
+        // ← Baris baru untuk lokalisasi
+        $middleware->web(append: [
+            \App\Http\Middleware\SetBahasa::class,
+        ]);
+
         $middleware->redirectGuestsTo(
             fn (Request $request) => route('back_office.login')
         );
+
+
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
