@@ -64,6 +64,10 @@
 
         <!-- Right section: Buttons (for desktop) -->
         <div class="hidden lg:flex items-center space-x-4 relative">
+
+            {{-- Panggil partial pengalih bahasa di sini, jangan di-hardcode --}}
+            @include('user_front.partials.pengalih-bahasa')
+
             <a href="register.html" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.daftar') }}</a>
             <a href="login.html" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.masuk') }}</a>
 
@@ -74,7 +78,6 @@
                 <!-- Cart dropdown -->
                 <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
                     <div class="space-y-4">
-                        <!-- product item dinamis (Seharusnya pakai loop @foreach, tapi ini ngekor kode lo) -->
                         <div class="flex items-center justify-between pb-4 border-b border-gray-line">
                             <div class="flex items-center">
                                 <img src="{{ asset('user_front/assets/images/single-product/1.jpg') }}" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
@@ -103,12 +106,17 @@
     <ul class="w-full">
         <li><a href="{{ route('home') }}" class="hover:text-secondary font-bold block py-2">{{ __('web.beranda') }}</a></li>
 
-        <!-- Dropdown diringkas biar gak kepanjangan -->
         <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">{{ __('web.produk') }}</a></li>
         <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">{{ __('web.checkout') }}</a></li>
     </ul>
 
     <div class="flex flex-col mt-6 space-y-2 items-center">
+
+        {{-- Panggil partial pengalih bahasa untuk versi mobile --}}
+        <div class="mb-4">
+            @include('user_front.partials.pengalih-bahasa')
+        </div>
+
         <a href="kontak.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">{{ __('web.kontak') }}</a>
         <a href="lokasi.html" class="bg-primary hover:bg-transparent text-white hover:text-primary border border-primary font-semibold px-4 py-2 rounded-full flex items-center justify-center min-w-[110px]">{{ __('web.cek_lokasi') }}</a>
     </div>
