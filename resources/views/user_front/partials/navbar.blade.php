@@ -1,6 +1,7 @@
 <!-- Header -->
 <header class="bg-gray-dark sticky top-0 z-50">
     <div class="container mx-auto flex justify-between items-center py-4">
+
         <!-- Left section: Logo -->
         <a href="{{ route('home') }}" class="flex items-center">
             <div>
@@ -25,7 +26,7 @@
 
                 <!-- Primary Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
-                    <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
+                    <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" class="hover:text-secondary font-semibold flex items-center">
                         {{ __('web.kategori_utama') }}
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
                     </a>
@@ -42,7 +43,7 @@
 
                 <!-- Secondary Dropdown -->
                 <li class="relative group" x-data="{ open: false }">
-                    <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" href="#" class="hover:text-secondary font-semibold flex items-center">
+                    <a href="{{ route('produk.index') }}" @mouseover="open = true" @mouseleave="open = false" class="hover:text-secondary font-semibold flex items-center">
                         {{ __('web.kategori_sekunder') }}
                         <i :class="open ? 'fas fa-chevron-up ml-1 text-xs' : 'fas fa-chevron-down ml-1 text-xs'"></i>
                     </a>
@@ -71,26 +72,16 @@
             <a href="register.html" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.daftar') }}</a>
             <a href="login.html" class="bg-primary border border-primary hover:bg-transparent text-white hover:text-primary font-semibold px-4 py-2 rounded-full inline-block">{{ __('web.masuk') }}</a>
 
-            <div class="relative group cart-wrapper">
-                <a href="/cart.html" >
-                    <img src="{{ asset('user_front/assets/images/cart-shopping.svg') }}" alt="Cart" class="h-6 w-6 group-hover:scale-120">
+            <!-- Cart Section -->
+            <div class="flex items-center relative">
+                @if ($jumlahKeranjang > 0)
+                    <span class="bg-primary text-white text-xs font-bold rounded-full px-2 py-1 mr-1">
+                        {{ $jumlahKeranjang }}
+                    </span>
+                @endif
+                <a href="{{ route('keranjang.index') }}">
+                    <img src="{{ asset('user_front/assets/images/cart-shopping.svg') }}" alt="Cart" class="h-6 w-6 hover:scale-110 transition">
                 </a>
-                <!-- Cart dropdown -->
-                <div class="absolute right-0 mt-1 w-80 bg-white shadow-lg p-4 rounded hidden group-hover:block">
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between pb-4 border-b border-gray-line">
-                            <div class="flex items-center">
-                                <img src="{{ asset('user_front/assets/images/single-product/1.jpg') }}" alt="Product" class="h-12 w-12 object-cover rounded mr-2">
-                                <div>
-                                    <p class="font-semibold">{{ $produk->nama ?? 'Nama Produk dari DB' }}</p>
-                                    <p class="text-sm">{{ __('web.kuantitas') }}: 1</p>
-                                </div>
-                            </div>
-                            <p class="font-semibold">$25.00</p>
-                        </div>
-                    </div>
-                    <a href="/cart.html" class="block text-center mt-4 border border-primary bg-primary hover:bg-transparent text-white hover:text-primary py-2 rounded-full font-semibold">{{ __('web.ke_keranjang') }}</a>
-                </div>
             </div>
 
             <!-- Search field -->
@@ -105,7 +96,6 @@
 <nav id="mobile-menu-placeholder" class="mobile-menu hidden flex-col items-center space-y-8 lg:hidden">
     <ul class="w-full">
         <li><a href="{{ route('home') }}" class="hover:text-secondary font-bold block py-2">{{ __('web.beranda') }}</a></li>
-
         <li><a href="{{ route('produk.index') }}" class="hover:text-secondary font-bold block py-2">{{ __('web.produk') }}</a></li>
         <li><a href="checkout.html" class="hover:text-secondary font-bold block py-2">{{ __('web.checkout') }}</a></li>
     </ul>
