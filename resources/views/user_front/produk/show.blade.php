@@ -43,6 +43,55 @@
 
                     </div>
 
+                    <!-- Checkout button -->
+                    @if ($produk->stok > 0)
+
+                        <form action="{{ route('keranjang.tambah', $produk) }}" method="POST" class="mb-6">
+                            @csrf
+
+                            <div class="mb-6">
+                                <label for="jumlah" class="block font-medium mb-2">{{ __('web.jumlah') }}</label>
+
+                                <div class="flex items-center">
+                                    <button type="button" onclick="ubahJumlah(-1)"
+                                            class="w-10 h-10 rounded-full bg-gray-100 font-bold text-xl">&minus;</button>
+
+                                    <input type="number" name="jumlah" id="jumlah"
+                                           value="1" min="1" max="{{ $produk->stok }}"
+                                           class="w-16 text-center border border-gray-300 rounded p-2 mx-2">
+
+                                    <button type="button" onclick="ubahJumlah(1)"
+                                            class="w-10 h-10 rounded-full bg-gray-100 font-bold text-xl">+</button>
+                                </div>
+                            </div>
+
+                            <button type="submit"
+                                    class="bg-primary border border-transparent hover:bg-transparent hover:border-primary text-white hover:text-primary font-semibold py-2 px-4 rounded-full w-full">
+                                {{ __('web.masuk_keranjang') }}
+                            </button>
+                        </form>
+
+                    @else
+
+                        <div class="bg-gray-100 rounded-lg p-4 mb-6 text-center">
+                            <p class="font-semibold mb-0">{{ __('web.stok_habis') }}</p>
+                        </div>
+
+                    @endif
+                    <!-- tambahan -->
+                    @push('scripts')
+                        <script>
+                            function ubahJumlah(langkah) {
+                                const kotak = document.getElementById('jumlah');
+                                const baru  = parseInt(kotak.value) + langkah;
+                                const batas = parseInt(kotak.max);
+
+                                if (baru >= 1 && baru <= batas) {
+                                    kotak.value = baru;
+                                }
+                            }
+                        </script>
+                    @endpush
 
                     <!-- Product Details Section -->
                     <div class="w-full lg:w-1/2">

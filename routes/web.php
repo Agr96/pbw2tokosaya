@@ -8,6 +8,7 @@ use App\Http\Controllers\HalamanController;
 use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BahasaController;
+use App\Http\Controllers\KeranjangController;
 
 // Route untuk mengubah bahasa
 Route::get('/bahasa/{kode}', [BahasaController::class, 'ganti'])->name('bahasa.ganti');
@@ -70,3 +71,13 @@ Route::prefix('back-office')
 
         });
     });
+
+Route::controller(KeranjangController::class)->prefix('keranjang')->name('keranjang.')->group(function () {
+
+    Route::get('/',                    'index')->name('index');
+    Route::post('/tambah/{produk}',    'tambah')->name('tambah');
+    Route::patch('/{produk}',          'ubah')->name('ubah');
+    Route::delete('/{produk}',         'hapus')->name('hapus');
+    Route::delete('/',                 'kosongkan')->name('kosongkan');
+
+});
