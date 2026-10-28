@@ -75,7 +75,7 @@ Route::prefix('back-office')
 Route::controller(KeranjangController::class)->prefix('keranjang')->name('keranjang.')->group(function () {
 
     Route::get('/',                    'index')->name('index');
-    Route::post('/tambah/{produk}',    'tambah')->name('tambah');
+    Route::post('/tamb  ah/{produk}',    'tambah')->name('tambah');
     Route::patch('/{produk}',          'ubah')->name('ubah');
     Route::delete('/{produk}',         'hapus')->name('hapus');
     Route::delete('/',                 'kosongkan')->name('kosongkan');
