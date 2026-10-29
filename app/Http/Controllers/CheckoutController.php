@@ -155,4 +155,17 @@ class CheckoutController extends Controller
 
         return $kode;
     }
+    public function selesai(Pesanan $pesanan)
+    {
+        // Hanya pemesan yang baru saja checkout yang boleh melihat
+        abort_unless(
+            session('pesanan_terakhir') === $pesanan->kode_pesanan,
+            403,
+            'Anda tidak berhak melihat rincian pesanan ini.'
+        );
+
+        $pesanan->load('detail');
+
+        return view('user_front.checkout.selesai', compact('pesanan'));
+    }
 }

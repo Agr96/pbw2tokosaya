@@ -10,6 +10,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BahasaController;
 use App\Http\Controllers\KeranjangController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\BackOffice\PesananController;
+
 
 // Route untuk mengubah bahasa
 Route::get('/bahasa/{kode}', [BahasaController::class, 'ganti'])->name('bahasa.ganti');
@@ -51,6 +53,9 @@ Route::prefix('back-office')
 
         // Hanya admin yang sudah login
         Route::middleware('admin')->group(function () {
+            Route::get('/pesanan',                  [PesananController::class, 'index'])->name('pesanan.index');
+            Route::get('/pesanan/{pesanan}',        [PesananController::class, 'show'])->name('pesanan.show');
+            Route::patch('/pesanan/{pesanan}/status', [PesananController::class, 'ubahStatus'])->name('pesanan.status');
 
             // Dashboard
             Route::get('/dashboard', [DashboardController::class, 'index'])
@@ -88,3 +93,4 @@ Route::controller(CheckoutController::class)->prefix('checkout')->name('checkout
     Route::post('/',       'proses')->name('proses');
     Route::get('/selesai/{pesanan:kode_pesanan}', 'selesai')->name('selesai');
 });
+
