@@ -9,6 +9,7 @@ use App\Http\Controllers\ProdukController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BahasaController;
 use App\Http\Controllers\KeranjangController;
+use App\Http\Controllers\CheckoutController;
 
 // Route untuk mengubah bahasa
 Route::get('/bahasa/{kode}', [BahasaController::class, 'ganti'])->name('bahasa.ganti');
@@ -80,4 +81,10 @@ Route::controller(KeranjangController::class)->prefix('keranjang')->name('keranj
     Route::delete('/{produk}',         'hapus')->name('hapus');
     Route::delete('/',                 'kosongkan')->name('kosongkan');
 
+});
+
+Route::controller(CheckoutController::class)->prefix('checkout')->name('checkout.')->group(function () {
+    Route::get('/',        'index')->name('index');
+    Route::post('/',       'proses')->name('proses');
+    Route::get('/selesai/{pesanan:kode_pesanan}', 'selesai')->name('selesai');
 });
